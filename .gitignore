@@ -1,0 +1,51 @@
+# Build files
+*.o
+*.dSYM
+
+# Latex files
+*.aux
+*.bbl
+*.blg
+
+# VIM Files
+*.swp
+*.swo
+
+# Mac Files
+*DS_Store
+
+#Vscode Files settings
+.vscode
+
+# Prep/Quiz directories
+prep
+lecture01/quiz/
+
+# Certain files that won't be added
+lecture04/boats/sailing2-crop.jpg
+lecture06/red7/Card.cpp
+lecture06/red7/Makefile
+lecture06/red7/Player.cpp
+lecture06/red7/Rule.cpp
+lecture06/red7/log.txt
+lecture06/red7/utils.cpp
+lecture06/red7/utils.h
+
+lecture07/red7/Card.cpp
+lecture07/red7/Player.cpp
+lecture07/red7/Rule.cpp
+
+lecture08/red7/Card.cpp
+lecture08/red7/Player.cpp
+lecture08/red7/Rule.cpp
+lecture08/red7/utils.cpp
+lecture08/red7/utils.h
+lecture08/red7/Deck_doublelinkedlist.cpp
+lecture08/red7/Deck_doublelinkedlist.h
+lecture08/red7/Deck_linkedlistSP.cpp
+lecture08/red7/Deck_linkedlistSP.h
+
+lecture09/red7
+lecture10/red7
+lecture11/red7
+
