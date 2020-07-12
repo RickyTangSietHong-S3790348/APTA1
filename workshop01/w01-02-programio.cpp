@@ -1,5 +1,3 @@
-
-#include <cstdio>
 #include <iostream>
 
 int main (void) {
@@ -13,14 +11,15 @@ int main (void) {
    std::cout << i << " " << f << std::endl;
    std::cout << d << " " << c << std::endl;
 
-   std::cin >> i;
-   std::cin >> f;
-   std::cout << i << " " << f << std::endl;
+   // Input
+   // std::cin >> i;
+   // std::cin >> f;
+   // std::cout << i << " " << f << std::endl;
    
-   int done = 0;
-   while (done != EOF) {
-      std::cout << i << std::endl;
-   }
+   // while (!std::cin.eof()) {
+   //    std::cin >> i;
+   //    std::cout << "int: " << i << std::endl;
+   // }
 
    return EXIT_SUCCESS;
 }

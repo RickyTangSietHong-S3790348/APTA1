@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <iostream>
 
 #define SCALE    2
