@@ -1,6 +1,9 @@
 
 #include <iostream>
 
+#define EXAMPLE 10
+#define EXAMPLE_CHAR 'z'
+
 int main (void) {
 
    /* This is a C-style comment inside the main function */
@@ -11,10 +14,10 @@ int main (void) {
    // By default, it must return an integer and takes no parameters
 
    // Types
-   int      i = 10;
-   float    f = 2.2f;
-   double   d = 3.2;
-   char     c = 'a';
+   int      i = EXAMPLE;
+   float    f = 10;
+   double   d = 10;
+   char     c = EXAMPLE_CHAR;
    bool     b = false;
 
    // All of the usual operators

@@ -1,10 +1,10 @@
 
-#include <cstdio>
 #include <iostream>
 #include <string>
 
 using std::string;
 using std::cout;
+using std::endl;
 
 namespace test {
    void foo() {
@@ -34,7 +34,7 @@ int main (void) {
 
    // Strings
    string s = "this is a string";
-   cout << "string: " << s << std::endl;
+   cout << "string: " << s << endl;
 
    foo();
    test::foo();

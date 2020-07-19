@@ -15,9 +15,9 @@ int main (void) {
    intarray[1] = 3;
 
    // Need this so that the compiler doesn't do bound checking for us
-   int i = 20;
+   // int i = 2;
+   // std::cout << intarray[i] << std::endl;
 
-   std::cout << intarray[i] << std::endl;
    printArray(intarray, LENGTH);
 
    return EXIT_SUCCESS;
