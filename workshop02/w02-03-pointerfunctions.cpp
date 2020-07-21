@@ -1,6 +1,10 @@
 
 #include <iostream>
 
+void increment(int* x);
+
+void swap(int* y, int* z);
+
 int main (void) {
 
    int a = 1;
@@ -16,10 +20,34 @@ int main (void) {
    int* ptr_c = &c;
 
    std::cout << std::endl;
-   std::cout << ptr_a << std::endl;
-   std::cout << ptr_b << std::endl;
-   std::cout << ptr_c << std::endl;
+   std::cout << *ptr_a << std::endl;
+   std::cout << *ptr_b << std::endl;
+   std::cout << *ptr_c << std::endl;
 
+
+   // Call the increment function
+   increment(ptr_c);
+   std::cout << std::endl;
+   std::cout << *ptr_c << std::endl;
+
+
+   // Swap
+   int i = 10;
+   int j = 42;
+   swap(&i, &j);
+   std::cout << std::endl;
+   std::cout << "i: " << i << std::endl;
+   std::cout << "j: " << j << std::endl;
 
    return EXIT_SUCCESS;
+}
+
+void increment(int* x) {
+   *x = *x + 1;
+}
+
+void swap(int* y, int* z) {
+   int tmp = *y;
+   *y = *z;
+   *z = tmp;
 }
