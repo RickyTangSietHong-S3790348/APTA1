@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <limits>
+#include <string>
 
 #define FALSE        0
 #define TRUE         (!FALSE)
@@ -8,12 +9,15 @@
 int main (void) {
 
    if (0) {
+      std::cout << "this is false" << std::endl;
+   }
+   if (1) {
       std::cout << "this is true" << std::endl;
-   } else if (1) {
+   }
+   if (-1) {
       std::cout << "this is true" << std::endl;
-   } else if (-1) {
-      std::cout << "this is true" << std::endl;
-   } else if (10) {
+   }
+   if (10) {
       std::cout << "this is true" << std::endl;
    }
 
