@@ -21,6 +21,9 @@
 prep
 lecture01/quiz/
 
+# Assignment files
+assignment1/starter_code/Makefile
+
 # Certain files that won't be added
 lecture04/boats/sailing2-crop.jpg
 lecture06/red7/Card.cpp
