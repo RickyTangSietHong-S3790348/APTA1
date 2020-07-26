@@ -32,9 +32,23 @@ int main (void) {
    cout << "address ptr: " << &ptr << endl;
    cout << "address ptr2: " << &ptr2 << endl;
 
- 
-   // Function call
+    // Function call
    a = foo(b);
+
+   // Create some memory on the heap
+   int* heap = new int(10);
+   std::cout << "heap: " << heap << std::endl;
+   std::cout << "*heap: " << *heap << std::endl;
+
+   delete heap;
+   // heap = nullptr;
+   // std::cout << "heap: " << heap << std::endl;
+   // std::cout << "*heap: " << *heap << std::endl;
+
+   int * onHeap = new int[LENGTH];
+   for (int i = 0; i < LENGTH; ++i) {
+      onHeap[i] = 0;
+   }
 
    return EXIT_SUCCESS;
 }

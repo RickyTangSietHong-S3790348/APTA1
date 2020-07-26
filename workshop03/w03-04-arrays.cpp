@@ -20,19 +20,19 @@ int main (void) {
    }
 
    // What about array?
-   // cout << array << endl;
-   // cout << *array << endl;
+   cout << array << endl;
+   cout << *array << endl;
 
    // Arrays as pointer
-   // int* ptr = array;
-   // for (int i = 0; i != LENGTH; ++i) {
-   //    cout << "ptr[" << i << "] at: " << &(ptr[i]) << " = " << ptr[i] << endl;
-   // }
+   int* ptr = array;
+   for (int i = 0; i != LENGTH; ++i) {
+      cout << "ptr[" << i << "] at: " << &(ptr[i]) << " = " << ptr[i] << endl;
+   }
 
-   // changeArray1(array);
-   // cout << array[0] << endl;
-   // changeArray2(array);
-   // cout << array[0] << endl;
+   changeArray1(array);
+   cout << array[0] << endl;
+   changeArray2(array);
+   cout << array[0] << endl;
 
    return EXIT_SUCCESS;
 }

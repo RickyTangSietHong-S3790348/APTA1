@@ -20,5 +20,15 @@ int main(void) {
     std::cout << *ptr << std::endl;
     std::cout << *qtr << std::endl;
 
+    std::cout << **pptr << std::endl;
+    std::cout << ***ppptr << std::endl;
+
+    int array[ROWS][COLS] = {};
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLS; ++j) {
+            std::cout << i << j << ": " << array[i][j] << std::endl;
+        }
+    }
+
     return EXIT_SUCCESS;
 }
