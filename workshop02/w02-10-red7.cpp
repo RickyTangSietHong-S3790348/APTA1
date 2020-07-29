@@ -49,42 +49,78 @@
 
 #define NUMBER_CARDS_TO_READ 5
 
+void printCard(int colour, int number);
 void printColourAsString(int colour);
 
+void readOneCard(int* colour, int* number);
+// void readOneCard(int& colour, int& number);
+
 int main(void) {
-   int number = 7;
-   int colour = RED;
+   int number[NUMBER_CARDS_TO_READ] = {};
+   int colour[NUMBER_CARDS_TO_READ] = {};
+   // for (int i = 0; i < NUMBER_CARDS_TO_READ; ++i) {
+   //    number[i] = 0;
+   //    colour[i] = 0;
+   // }
    
    // Read a set number of cards from the user
-   // for (int i = 0; i < NUMBER_CARDS_TO_READ; ++i) {
-
    // Read until EOF
-   while(!std::cin.eof()) {
-      // Read the card value
-      std::cin >> number;
-      std::cin >> colour;
+   int numRead = 0;
+   while(!std::cin.eof() && numRead < NUMBER_CARDS_TO_READ) {
+      // int tmpColour = 0;
+      // int tmpNumber = 0;
+      // readOneCard(&tmpColour, &tmpNumber);
+      // colour[numRead] = tmpColour;
+      // number[numRead] = tmpNumber;
 
+      readOneCard(&colour[numRead], &number[numRead]);
+      // readOneCard(colour[numRead], number[numRead]);
+
+      // Read the card value
+      // std::cin >> colour[numRead];
+      // std::cin >> number[numRead];
+
+      if (!std::cin.eof()) {
+         ++numRead;
+      }
+   }
+
+   for (int i = 0; i < numRead && i < NUMBER_CARDS_TO_READ; ++i) {
       // Print out "natural version" of the card
-      std::cout << "Red7 Card - read from the user" << std::endl;
-      printColourAsString(colour);
-      std::cout << "\tnumber: " << number << std::endl;
+      printCard(colour[i], number[i]);
    }
 
    return EXIT_SUCCESS;
 }
 
+void readOneCard(int* colour, int* number) {
+   std::cin >> *colour;
+   std::cin >> *number;
+}
+
+// void readOneCard(int& colour, int& number) {
+//    std::cin >> colour;
+//    std::cin >> number;
+// }
+
+void printCard(int colour, int number) {
+   std::cout << "Card: ";
+   printColourAsString(colour);
+   std::cout << " " << number << std::endl;
+}
+
 void printColourAsString(int colour) {
    // Define some colours as string
-   std::string red = "Red";
-   std::string orange = "Orange";
-   std::string yellow = "Yellow";
-   std::string green = "Green";
-   std::string blue = "Blue";
-   std::string indigo = "Indigo";
-   std::string violet = "Violet";
-   std::string unknown = "UNKNOWN";
+   char red[] = "Red";
+   char orange[] = "Orange";
+   char yellow[] = "Yellow";
+   char green[] = "Green";
+   char blue[] = "Blue";
+   char indigo[] = "Indigo";
+   char violet[] = "Violet";
+   char unknown[] = "UNKNOWN";
 
-   std::cout << "\tcolour: ";
+   // std::cout << "\tcolour: ";
    if (colour == RED) {
       std::cout << red;
    } else if (colour == ORANGE) {
@@ -102,5 +138,5 @@ void printColourAsString(int colour) {
    } else {
       std::cout << unknown;
    }
-   std::cout << std::endl;
+   // std::cout << std::endl;
 }
