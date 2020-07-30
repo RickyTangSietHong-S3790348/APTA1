@@ -1,6 +1,6 @@
 
-#ifndef COSC_ASSIGN_ONE_PARTICLE_FILTER
-#define COSC_ASSIGN_ONE_PARTICLE_FILTER
+#ifndef COSC_ASSIGN_ONE_WALL_FOLLOWER
+#define COSC_ASSIGN_ONE_WALL_FOLLOWER
 
 #include "Position.h"
 #include "Trail.h"
@@ -43,4 +43,4 @@ private:
    /*                                           */
 };
 
-#endif // COSC_ASSIGN_ONE_PARTICLE_FILTER
+#endif // COSC_ASSIGN_ONE_WALL_FOLLOWER
