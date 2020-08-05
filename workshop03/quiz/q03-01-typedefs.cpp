@@ -1,15 +1,16 @@
 #include <iostream>
 #include <string>
 
-#define LENTGH 10
+#define LENGTH 10
 
-typedef ?? String;
+typedef std::string String;
 
 int main(void) {
 
     String output = "Hello World!";
+    // char* output = "Hello World";
 
-    std::cout << out << std::endl;
+    std::cout << output << std::endl;
 
     return EXIT_SUCCESS;
 }

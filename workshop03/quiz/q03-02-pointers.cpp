@@ -14,7 +14,11 @@ int main(void) {
     ttr = rtr;
 
     // Make x & y equal using ttr & rtr
-    ?? = ??
+    // ?? = ??
+    **ttr = **rtr;
+    **rtr = **ttr;
+    // x = x
+    **ttr = -3;
 
     std::cout << x << std::endl;
     std::cout << y << std::endl;

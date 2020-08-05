@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 
 /**
  * Topics:
@@ -33,19 +31,13 @@
  *  - diff
  */
 
-#define RED    0
-#define ORANGE 1
-#define YELLOW 2
-#define GREEN  3
-#define BLUE   4
-#define INDIGO 5
-#define VIOLET 6
+#include <iostream>
+#include <string>
+
+#include "Card.h"
+#include "utils.h"
 
 #define NUMBER_CARDS_TO_READ 5
-
-void printCard(int colour, int number);
-void printColourAsString(int colour);
-void printRule(int colour);
 
 void readOneCard(int* colour, int* number);
 
@@ -54,14 +46,25 @@ int main(void) {
    int colour = 0;
    int number = 0;
    
+   // Array of Card objects -> cards array is ON the STACK
+   // Card OBJECTS will be on the HEAP
+   Card* cards[NUMBER_CARDS_TO_READ];
+   for(int i =0; i < NUMBER_CARDS_TO_READ; ++i) {
+      cards[i] = nullptr;
+   }
+
    // Read a set number of cards from the user or until EOF
    int numRead = 0;
    while(!std::cin.eof() && numRead < NUMBER_CARDS_TO_READ) {
       readOneCard(&colour, &number);
       
       if (!std::cin.eof()) {
+         // Put the card in the array
+         Card* card = new Card(colour, number);
+         cards[numRead] = card;
+
          // Print the card read
-         printCard(colour, number);
+         // printCard(card);
 
          // Increment cards read
          ++numRead;
@@ -69,9 +72,16 @@ int main(void) {
    }
 
    // When we had array's before - print out all the cards
-   // for (int i = 0; i < numRead && i < NUMBER_CARDS_TO_READ; ++i) {
-   //    printCard(colour[i], number[i]);
-   // }
+   for (int i = 0; i < numRead && i < NUMBER_CARDS_TO_READ; ++i) {
+      printCard(cards[i]);
+   }
+
+   // Cleanup - delete my array of objects
+   for(int i =0; i < NUMBER_CARDS_TO_READ; ++i) {
+      if (cards[i] != nullptr) {
+         delete cards[i];
+      }
+   }
 
    return EXIT_SUCCESS;
 }
@@ -79,65 +89,4 @@ int main(void) {
 void readOneCard(int* colour, int* number) {
    std::cin >> *colour;
    std::cin >> *number;
-}
-
-void printCard(int colour, int number) {
-   std::cout << "Card: ";
-   printColourAsString(colour);
-   std::cout << " " << number << std::endl;
-   printRule(colour);
-   std::cout << std::endl;
-}
-
-void printColourAsString(int colour) {
-   // Define some colours as string
-   char red[] = "Red";
-   char orange[] = "Orange";
-   char yellow[] = "Yellow";
-   char green[] = "Green";
-   char blue[] = "Blue";
-   char indigo[] = "Indigo";
-   char violet[] = "Violet";
-   char unknown[] = "UNKNOWN";
-
-   if (colour == RED) {
-      std::cout << red;
-   } else if (colour == ORANGE) {
-      std::cout << orange;
-   } else if (colour == YELLOW) {
-      std::cout << yellow;
-   } else if (colour == GREEN) {
-      std::cout << green;
-   } else if (colour == BLUE) {
-      std::cout << blue;
-   } else if (colour == INDIGO) {
-      std::cout << indigo;
-   } else if (colour == VIOLET) {
-      std::cout << violet;
-   } else {
-      std::cout << unknown;
-   }
-}
-
-void printRule(int colour) {
-   std::cout << "      ";
-   if (colour == RED) {
-      std::cout << "Highest Card";
-   } else if (colour == ORANGE) {
-      std::cout << "Most of one Number";
-   } else if (colour == YELLOW) {
-      std::cout << "Most of one Colour";
-   } else if (colour == GREEN) {
-      std::cout << "Most Even Cards";
-   } else if (colour == BLUE) {
-      std::cout << "Most different Colours";
-   } else if (colour == INDIGO) {
-      std::cout << "Most Cards in a Row";
-   } else if (colour == VIOLET) {
-      std::cout << "Most Cards below 4";
-   } else {
-      std::cout << "???";
-   }
-
-   return;
 }
