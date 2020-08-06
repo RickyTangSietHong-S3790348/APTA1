@@ -19,36 +19,41 @@
 
 # Prep/Quiz directories
 prep
-lecture01/quiz/
+workshop01/quiz/
 
 # Assignment files
 assignment1/starter_code/Makefile
 
 # Certain files that won't be added
-lecture04/boats/sailing2-crop.jpg
-lecture06/red7/Card.cpp
-lecture06/red7/Makefile
-lecture06/red7/Player.cpp
-lecture06/red7/Rule.cpp
-lecture06/red7/log.txt
-lecture06/red7/utils.cpp
-lecture06/red7/utils.h
+workshop03/red7/red7
+workshop03/red7/output.txt
+workshop03/red7/expected.txt
 
-lecture07/red7/Card.cpp
-lecture07/red7/Player.cpp
-lecture07/red7/Rule.cpp
+workshop04/boats/sailing2-crop.jpg
+workshop06/red7/Card.cpp
+workshop06/red7/Makefile
+workshop06/red7/Player.cpp
+workshop06/red7/Rule.cpp
+workshop06/red7/log.txt
+workshop06/red7/utils.cpp
+workshop06/red7/utils.h
 
-lecture08/red7/Card.cpp
-lecture08/red7/Player.cpp
-lecture08/red7/Rule.cpp
-lecture08/red7/utils.cpp
-lecture08/red7/utils.h
-lecture08/red7/Deck_doublelinkedlist.cpp
-lecture08/red7/Deck_doublelinkedlist.h
-lecture08/red7/Deck_linkedlistSP.cpp
-lecture08/red7/Deck_linkedlistSP.h
+workshop07/red7/Card.cpp
+workshop07/red7/Player.cpp
+workshop07/red7/Rule.cpp
 
-lecture09/red7
-lecture10/red7
-lecture11/red7
+workshop08/red7/Card.cpp
+workshop08/red7/Player.cpp
+workshop08/red7/Rule.cpp
+workshop08/red7/utils.cpp
+workshop08/red7/utils.h
+workshop08/red7/Deck_doublelinkedlist.cpp
+workshop08/red7/Deck_doublelinkedlist.h
+workshop08/red7/Deck_linkedlistSP.cpp
+workshop08/red7/Deck_linkedlistSP.h
+
+workshop09/red7
+workshop10/red7
+workshop11/red7
+
 
