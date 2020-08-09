@@ -17,7 +17,7 @@ std::string Sail::getColour() {
     return colour;
 }
 
-void Sail::setString(std::string colour) {
+void Sail::setColour(std::string colour) {
     this->colour = colour;
 }
 

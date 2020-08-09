@@ -10,7 +10,7 @@ public:
     ~Sail();
 
     std::string getColour();
-    void setString(std::string colour);
+    void setColour(std::string colour);
     
 private:
     std::string colour;

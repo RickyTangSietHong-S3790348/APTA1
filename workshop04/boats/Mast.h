@@ -1,6 +1,8 @@
 #ifndef MAST_H
 #define MAST_H 
 
+#include "Sail.h"
+
 class Mast {
 public:
     Mast();
@@ -10,8 +12,12 @@ public:
     int getLength();
     void setLength(int length);
 
+    Sail* getSail();
+
 private:
     int length;
+
+    Sail* sail;
 };
 
 #endif // MAST_H
