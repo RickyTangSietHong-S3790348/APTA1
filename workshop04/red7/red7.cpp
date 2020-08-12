@@ -26,11 +26,16 @@
 #include <string>
 
 #include "Card.h"
+#include "Rule.h"
 #include "utils.h"
 
 #define NUMBER_CARDS_TO_READ 5
 
-void readOneCard(int* colour, int* number);
+void readOneCard(Colour* colour, int* number);
+
+void playTheGame(Card* cards[], int numCards);
+
+void deepCopyCards(Card* source[], Card* copy[], int numCards);
 
 int main(void) {
   
@@ -44,7 +49,7 @@ int main(void) {
    // Read a set number of cards from the user or until EOF
    int numRead = 0;
    while(!std::cin.eof() && numRead < NUMBER_CARDS_TO_READ) {
-      int colour = 0;
+      Colour colour = RED;
       int number = 0;   
       readOneCard(&colour, &number);
       
@@ -59,9 +64,10 @@ int main(void) {
    }
 
    // When we had array's before - print out all the cards
-   for (int i = 0; i < numRead && i < NUMBER_CARDS_TO_READ; ++i) {
-      printCard(cards[i]);
-   }
+   // numRead is guaratenteed to be no longer than length of the array
+   printAllCards(cards, numRead);
+
+   playTheGame(cards, numRead);
 
    // Cleanup - delete my array of objects
    for(int i =0; i < NUMBER_CARDS_TO_READ; ++i) {
@@ -73,7 +79,67 @@ int main(void) {
    return EXIT_SUCCESS;
 }
 
-void readOneCard(int* colour, int* number) {
-   std::cin >> *colour;
+
+void playTheGame(Card* cards[], int numCards) {
+   std::cout << "Playing this Game " << std::endl;
+   // Simple game
+   Rule* rule = new Rule();
+
+   // Keep setting cards until we run out
+   for(int i =0; i < numCards; ++i) {
+      
+      // Transfering ownership
+      // rule->setRule(cards[i]);
+      // cards[i] = nullptr;
+
+      // Copy of the card object
+      // Transfer ownership of the COPY!!
+      Card* copyCard = new Card(*cards[i]);
+      rule->setRule(copyCard);
+      copyCard = nullptr;
+
+      std::cout << "Setting rule as: ";
+      printColourAsString(rule->getRule());
+      std::cout << std::endl;
+      
+   }
+
+   // Cleanup!
+   delete rule;
+}
+
+
+void deepCopyCards(Card* source[], Card* copy[], int numCards) {
+   for(int i =0; i < numCards; ++i) {
+      // SHALLOW!!!!!!!
+      // copy[i] = source[i];
+
+      // Deep
+      copy[i] = new Card(*source[i]);
+   }
+}
+
+
+void readOneCard(Colour* colour, int* number) {
+   // Read Colour
+   int readColour = 0;
+   std::cin >> readColour;
+   if (readColour == 0) {
+      *colour = RED;
+   } else if (readColour == 1) {
+      *colour = ORANGE;
+   } else if (readColour == 2) {
+      *colour = YELLOW;
+   } else if (readColour == 3) {
+      *colour = GREEN;
+   } else if (readColour == 4) {
+      *colour = BLUE;
+   } else if (readColour == 5) {
+      *colour = INDIGO;
+   } else if (readColour == 6) {
+      *colour = VIOLET;
+   }
+
+   // Read Number
    std::cin >> *number;
 }

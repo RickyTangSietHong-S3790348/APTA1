@@ -2,13 +2,13 @@
 #include <iostream>
 #include "utils.h"
 
-// void printCard(int colour, int number) {
-//    std::cout << "Card: ";
-//    printColourAsString(colour);
-//    std::cout << " " << number << std::endl;
-//    printRule(colour);
-//    std::cout << std::endl;
-// }
+// ASSUMPTION!!
+// numPrint MUST be not bigger than the length of the array!
+void printAllCards(Card* cards[], int numPrint) {
+   for (int i = 0; i < numPrint; ++i) {
+      printCard(cards[i]);
+   }
+}
 
 void printCard(Card* card) {
    std::cout << "Card: ";

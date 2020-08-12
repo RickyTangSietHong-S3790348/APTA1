@@ -4,7 +4,8 @@
 
 #include "Card.h"
 
-// void printCard(int colour, int number);
+void printAllCards(Card* cards[], int numPrint);
+
 void printCard(Card* card);
 void printColourAsString(int colour);
 void printRule(int colour);
