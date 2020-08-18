@@ -31,8 +31,11 @@ workshop03/red7/expected.txt
 
 workshop04/boats/boats
 workshop04/red7/red7
-
 workshop04/boats/sailing2-crop.jpg
+
+workshop05/red7/red7
+workshop05/red7/**/Deck.cpp
+
 workshop06/red7/Card.cpp
 workshop06/red7/Makefile
 workshop06/red7/Player.cpp
